@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customers-dep
+  labels:
+    app: customers-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customers-app
+  template:
+    metadata:
+      labels:
+        app: customers-app
+    spec:
+      containers:
+      - name: customers
+        image: rafcasto/cryptoibero-customers
+        ports:
+        - containerPort: 8000
