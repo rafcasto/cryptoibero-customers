@@ -58,7 +58,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	c.SetCookie("jwt", token, 3600, "/", "localhost", false, true)
+	c.SetCookie("jwt", token, 3600, "/", "", false, true)
 
 	c.JSON(http.StatusOK, result)
 
