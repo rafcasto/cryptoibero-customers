@@ -6,15 +6,15 @@ import (
 )
 
 type User struct {
-	ID       int64  `json:"id"`
-	FirtName string `json:"firtName"`
-	LastName string `json:"lastName"`
-	Password string `json:"password"`
-	Email    string `json:"email"`
+	ID        int64  `json:"id"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Password  string `json:"password"`
+	Email     string `json:"email"`
 }
 
 func (user *User) Validate() *errors.RestErr {
-	user.FirtName = strings.TrimSpace(user.FirtName)
+	user.FirstName = strings.TrimSpace(user.FirstName)
 	user.LastName = strings.TrimSpace(user.LastName)
 	user.Email = strings.TrimSpace(user.Email)
 	if user.Email == "" {

@@ -83,7 +83,7 @@ func Get(c *gin.Context) {
 	}
 
 	claims := token.Claims.(*jwt.StandardClaims)
-	issuer, err := strconv.ParseInt(claims.Issuer, 10, 4)
+	issuer, err := strconv.ParseInt(claims.Issuer, 10, 64)
 	if err != nil {
 		restErr := errors.NewBadRequestError("user id should be a number")
 		c.JSON(restErr.Status, restErr)
